@@ -4,19 +4,20 @@ import QuotesCard from '../components/QuotesCard'
 
 const QuotesRender = () => {
 
-    const [quotesAccumate, setquotesAccumate] = useState(QuotesData)
+    const [quotesAccumate, setquotesAccumate] = useState([])
 
     useEffect(() => {
-      setquotesAccumate(quotesAccumate)
+        // console.log(QuotesData);
+      setquotesAccumate(QuotesData)
     }, [])
     
 
   return (
     
-    <div>
+    <div className=' bg-black flex flex-col gap-5'>
         
-        {quotesAccumate.map((quote,idx)=>{
-            <QuotesCard quote={quote} />
+        {quotesAccumate.map((quote)=>{
+           return <QuotesCard quote={quote}/>
         })}
 
     </div>
